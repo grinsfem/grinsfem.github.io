@@ -28,36 +28,47 @@
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
         <h2>
-<a id="grins" class="anchor" href="#grins" aria-hidden="true"><span class="octicon octicon-link"></span></a>GRINS</h2>
+<a id="grins" class="anchor" href="#grins" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>GRINS</h2>
 
-<p><code>GRINS</code> is a C++ finite element framework that aims to quickly enable the simulation of complex mathematical models by reusing developed modeling capabilities while also simplifying the introduction of new capabilities. It is built on top of the <a href="http://libmesh.github.io">libMesh finite element library</a>.</p>
+<p><code>GRINS</code> is a C++ finite element framework that aims to quickly enable the simulation of complex mathematical models by reusing developed modeling capabilities while also simplifying the introduction of new capabilities. It is built on top of the <a href="http://libmesh.github.io">libMesh finite element library</a>. <code>GRINS</code> may used as an application, with the all the capabilities there-in, or as a library from which you can extend to build your own specialized application.</p>
 
 <h2>
-<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
+<a id="examples" class="anchor" href="#examples" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Examples</h2>
 
-<p><code>GRINS</code> requires a <code>libMesh</code> installation. Additionally, <a href="http://www.boost.org">Boost</a> is also required (although we plan to remove this requirement in the near future). We also highly recommend your <code>libMesh</code> installation be built with <a href="http://www.mcs.anl.gov/petsc/">PETSc</a>.</p>
+<p>Several <a href="https://github.com/grinsfem/grins/tree/master/examples">examples</a> are included illustrating the use of the input file, together with a mesh built by <code>libMesh</code> internally or reading a mesh constructed by an external mesh generator, to build and run complex multiphysics applications. The <a href="https://github.com/grinsfem/grins/tree/master/examples/master_example_inputfile.in">master example input file</a> contains more detailed documentation about the options. Note this is currently still being fully populated, so not everything is currently described in detail.</p>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
+
+<p><code>GRINS</code> requires a <code>libMesh</code> installation. We also highly recommend your <code>libMesh</code> installation be built with <a href="http://www.mcs.anl.gov/petsc/">PETSc</a>. For distributed-memory parallelism, <code>libMesh</code> and <code>GRINS</code> must be built with MPI. Although we do not mandate full C++11 compatibility, we do use <code>std::shared_ptr</code>. If your compiler does not support <code>std::shared_ptr</code>, then <code>GRINS</code> must be built with Boost; otherwise, Boost is not required.</p>
 
 <p>Release tarballs are available <a href="https://github.com/grinsfem/grins/releases">here</a>. We use <code>autotools</code> so follow the <code>configure; make; make install</code> paradigm. If cloning from the main repository, you will need to run the <code>bootstrap.sh</code> script first (this step requires an <code>autotools</code> installation) then proceed with <code>configure; make; make install</code>. Out-of-source (<code>VPATH</code>) and parallel builds are supported. Additionally, you can check the <code>GRINS</code> installation by running <code>make check</code> (again, may be run in parallel).</p>
 
 <p>Help is available using <code>configure --help</code>. By default, <code>GRINS</code> is built with optimization enabled and debugging turned off. Use <code>METHOD=dbg</code> or <code>METHOD=devel</code> at configure time to enable debugging flags.</p>
 
 <h2>
-<a id="documentation" class="anchor" href="#documentation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Documentation</h2>
+<a id="code-documentation" class="anchor" href="#code-documentation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Code Documentation</h2>
 
-<p>Online Doxygen pages are available <a href="http://grinsfem.github.io/grins/html/">here</a></p>
+<p>Online Doxygen pages are available <a href="https://grinsfem.github.io/grins/html/">here</a></p>
+
+<p>Documentation for older versions:</p>
+
+<ul>
+<li><a href="https://grinsfem.github.io/grins/v0.6.0/html/">v0.6.0</a></li>
+</ul>
 
 <h2>
-<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
 
 <p><code>GRINS</code> is released under the LGPL 2.1 license. See the <code>LICENSE</code> file for details.</p>
 
 <h2>
-<a id="contributing" class="anchor" href="#contributing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Contributing</h2>
+<a id="contributing" class="anchor" href="#contributing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contributing</h2>
 
 <p>We welcome feedback/bug reports through GitHub Issues on the <code>GRINS</code> page. We also welcome contributed enhancements and bug fixes through pull requests.</p>
 
 <h2>
-<a id="user-support" class="anchor" href="#user-support" aria-hidden="true"><span class="octicon octicon-link"></span></a>User Support</h2>
+<a id="user-support" class="anchor" href="#user-support" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>User Support</h2>
 
 <p>If you have questions or need help with using or contributing to <code>GRINS</code>, feel free to ask questions on one of the mailing lists:</p>
 
@@ -70,7 +81,7 @@
 </ul>
 
 <h2>
-<a id="citing-grins" class="anchor" href="#citing-grins" aria-hidden="true"><span class="octicon octicon-link"></span></a>Citing GRINS</h2>
+<a id="citing-grins" class="anchor" href="#citing-grins" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Citing GRINS</h2>
 
 <p>If you use <code>GRINS</code> in your work, we ask that you please cite <code>GRINS</code> and <code>libMesh</code>:</p>
 
@@ -89,7 +100,8 @@
 @article{GRINSPaper,
          author = {P.~T.~Bauman and R.~H.~Stogner},
          title = {GRINS: A Multiphysics Framework Based on the libMesh Finite Element Library},
-         note = {submitted,\url{http://arxiv.org/abs/1506.06102}}
+         journal = {SIAM Journal on Scientific Computing},
+         note = {in press}
 }
 </code></pre>
       </section>
