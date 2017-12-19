@@ -40,7 +40,7 @@
 <h2>
 <a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
 
-<p><code>GRINS</code> requires a <code>libMesh</code> installation. We also highly recommend your <code>libMesh</code> installation be built with <a href="http://www.mcs.anl.gov/petsc/">PETSc</a>. For distributed-memory parallelism, <code>libMesh</code> and <code>GRINS</code> must be built with MPI. Although we do not mandate full C++11 compatibility, we do use <code>std::shared_ptr</code>. If your compiler does not support <code>std::shared_ptr</code>, then <code>GRINS</code> must be built with Boost; otherwise, Boost is not required.</p>
+<p><code>GRINS</code> requires a <code>libMesh</code> installation. We also highly recommend your <code>libMesh</code> installation be built with <a href="http://www.mcs.anl.gov/petsc/">PETSc</a>. For distributed-memory parallelism, <code>libMesh</code> and <code>GRINS</code> must be built with MPI. <code>GRINS</code> requires a C++11 compiler.</p>
 
 <p>Release tarballs are available <a href="https://github.com/grinsfem/grins/releases">here</a>. We use <code>autotools</code> so follow the <code>configure; make; make install</code> paradigm. If cloning from the main repository, you will need to run the <code>bootstrap.sh</code> script first (this step requires an <code>autotools</code> installation) then proceed with <code>configure; make; make install</code>. Out-of-source (<code>VPATH</code>) and parallel builds are supported. Additionally, you can check the <code>GRINS</code> installation by running <code>make check</code> (again, may be run in parallel).</p>
 
@@ -49,11 +49,12 @@
 <h2>
 <a id="code-documentation" class="anchor" href="#code-documentation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Code Documentation</h2>
 
-<p>Online Doxygen pages are available <a href="https://grinsfem.github.io/grins/html/">here</a></p>
+<p>Online Doxygen pages are available <a href="https://grinsfem.github.io/grins/html/">here</a> for the current <code>GRINS</code> release.</p>
 
 <p>Documentation for older versions:</p>
 
 <ul>
+<li><a href="https://grinsfem.github.io/grins/v0.7.0/html/">v0.7.0</a></li>
 <li><a href="https://grinsfem.github.io/grins/v0.6.0/html/">v0.6.0</a></li>
 </ul>
 
@@ -101,7 +102,9 @@
          author = {P.~T.~Bauman and R.~H.~Stogner},
          title = {GRINS: A Multiphysics Framework Based on the libMesh Finite Element Library},
          journal = {SIAM Journal on Scientific Computing},
-         note = {in press}
+         volume={38},
+         number={5},
+         pages={S78-S100}
 }
 </code></pre>
       </section>
